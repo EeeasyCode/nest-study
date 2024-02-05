@@ -6,17 +6,15 @@ on:
 jobs:
   TEST:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
+    
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '14.x'
 
       - name: Test Application
         run: yarn run test
