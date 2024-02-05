@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Test Application
-        run: yarn run test:badge
+        run: yarn run test
           
       - name: Update README.md test coverage section 
         uses: stefanzweifel/git-auto-commit-action@v4
