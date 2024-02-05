@@ -19,7 +19,7 @@ jobs:
       - name: Test Application
         run: |
           yarn run ci
-          yarn run test
+          yarn run test:badge
           
       - name: Update README.md test coverage section 
         uses: stefanzweifel/git-auto-commit-action@v4
