@@ -11,7 +11,7 @@ powered by
 
  | Statements | Branches | Functions | Lines |
 | -----------|----------|-----------|-------|
-| ![Statements](https://img.shields.io/badge/Coverage-27.9%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-22.22%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-21.62%25-red.svg "Make me better!") |
+| ![Statements](https://img.shields.io/badge/Coverage-50%25-red.svg "Make me better!") | ![Branches](https://img.shields.io/badge/Coverage-100%25-brightgreen.svg "Make me better!") | ![Functions](https://img.shields.io/badge/Coverage-50%25-red.svg "Make me better!") | ![Lines](https://img.shields.io/badge/Coverage-44.44%25-red.svg "Make me better!") |
 
 # yarn
 
