@@ -2,6 +2,11 @@
 
 powered by
 
+# Test 
+> 필수 테스트 코드
+-  Service 로직의 Unit Test
+-  E2E Test
+
 [![Awesome NestJS](https://img.shields.io/badge/Awesome-NestJS-blue.svg?longCache=true&style=flat-square)](https://github.com/juliandavidmr/awesome-nestjs)
 
  | Statements | Branches | Functions | Lines |
