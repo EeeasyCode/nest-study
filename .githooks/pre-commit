@@ -1,0 +1,9 @@
+# .githooks/pre-commit
+
+LOCAL_PATHS=( $(cat /etc/paths) )
+
+for LOCAL_PATH in "${LOCAL_PATHS[@]}"; do
+    PATH=$LOCAL_PATH:$PATH
+done
+
+./node_modules/.bin/lint-staged
