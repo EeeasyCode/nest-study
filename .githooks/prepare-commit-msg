@@ -1,6 +1,0 @@
-#!/bin/sh
-
-echo 'Hello khan!'
-
-exit 0 
-
