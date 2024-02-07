@@ -1,5 +1,7 @@
 # .githooks/pre-commit
 
+echo "pre-commit is executed." 
+
 LOCAL_PATHS=( $(cat /etc/paths) )
 
 for LOCAL_PATH in "${LOCAL_PATHS[@]}"; do
