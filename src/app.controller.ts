@@ -8,7 +8,7 @@ export class AppController {
   @Get('hello')
   hello(@Query('name') name: string = 'World') {
     return {
-      message: this.appService.getHello(name)
-    }
+      message: this.appService.getHello(name),
+    };
   }
 }

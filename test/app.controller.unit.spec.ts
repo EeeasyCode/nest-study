@@ -19,16 +19,16 @@ describe('AppController', () => {
   describe('hello', () => {
     it('returns a default message', () => {
       jest.spyOn(appService, 'getHello').mockReturnValue('Hey~');
-      expect(appController.hello()).toEqual({ message: 'Hey~'});
+      expect(appController.hello()).toEqual({ message: 'Hey~' });
       expect(appService.getHello).toHaveBeenCalledTimes(1);
       expect(appService.getHello).toHaveBeenCalledWith('World');
     });
 
     it('returns a personalized message', () => {
       jest.spyOn(appService, 'getHello').mockReturnValue('Hey, John~');
-      expect(appController.hello('John')).toEqual({ message: 'Hey, John~'});
+      expect(appController.hello('John')).toEqual({ message: 'Hey, John~' });
       expect(appService.getHello).toHaveBeenCalledTimes(1);
       expect(appService.getHello).toHaveBeenCalledWith('John');
-    })
+    });
   });
 });
