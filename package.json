@@ -60,7 +60,7 @@
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
-      "prettier --config ./.prettierrc --write --cache \"**/*.{js,jsx,ts,tsx}\"",
+      "prettier --config ./.prettierrc --write \"**/*.{js,jsx,ts,tsx}\"",
       "yarn lint"
     ]
   },
