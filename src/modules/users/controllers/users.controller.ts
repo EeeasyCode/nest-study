@@ -4,6 +4,10 @@ import { Controller, Post } from '@nestjs/common';
 export class UsersController {
   @Post('hello')
   async hello() {
+    const conventionTest = {
+      name: '홍길동',
+      from: '활빈당',
+    };
     return 'hello';
   }
 }
