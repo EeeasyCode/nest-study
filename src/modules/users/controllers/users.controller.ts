@@ -9,6 +9,7 @@ export class UsersController {
       from: '활빈당',
     };
     const hi = 'test';
+    const test = 'hi';
     return 'hello';
   }
 }
