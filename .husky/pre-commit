@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx yarn format
+npx lint-staged
 
-echo 'prettier 적용 완료'
+echo 'lint && prettier 적용 완료'
