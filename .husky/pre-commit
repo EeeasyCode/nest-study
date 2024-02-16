@@ -11,4 +11,4 @@ done
 
 
 
-echo PATH
+echo $PATH
