@@ -60,8 +60,8 @@
   },
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
-      "prettier --config ./.prettierrc --write \"**/*.{js,jsx,ts,tsx}\"",
-      "yarn lint"
+      "prettier --write",
+      "eslint"
     ]
   },
   "jest": {
