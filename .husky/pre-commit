@@ -9,6 +9,6 @@ for LOCAL_PATH in "${LOCAL_PATHS[@]}"; do
     PATH=$LOCAL_PATH:$PATH
 done
 
-./node_modules/.bin/lint-staged
 
-echo 'lint & prettier 적용 완료'
+
+echo PATH
