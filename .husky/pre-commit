@@ -3,12 +3,4 @@
 
 npx lint-staged
 
-LOCAL_PATHS=( $(cat /etc/paths) )
-
-for LOCAL_PATH in "${LOCAL_PATHS[@]}"; do
-    PATH=$LOCAL_PATH:$PATH
-done
-
-
-
-echo $PATH
+echo 'lint && prettier 적용 완료'
