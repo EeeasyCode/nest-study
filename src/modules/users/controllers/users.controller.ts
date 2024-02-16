@@ -6,7 +6,7 @@ export class UsersController {
   async hello() {
     const conventionTest = {
       name: '홍길동',
-      from: '활빈당',
+      from: '활빈당'
     };
     const hi = 'test';
     const test = 'hi';
