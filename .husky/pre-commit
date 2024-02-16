@@ -1,6 +1,14 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# #!/usr/bin/env sh
+# . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# npx lint-staged
+
+LOCAL_PATHS=( $(cat /etc/paths) )
+
+for LOCAL_PATH in "${LOCAL_PATHS[@]}"; do
+    PATH=$LOCAL_PATH:$PATH
+done
+
+./node_modules/.bin/lint-staged
 
 echo 'lint & prettier 적용 완료'
