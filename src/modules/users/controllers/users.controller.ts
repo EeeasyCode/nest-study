@@ -8,7 +8,7 @@ export class UsersController {
       name: '홍길동',
       from: '활빈당',
     };
-    const hi = 'test';
+    var hi = 'test';
     const test = 'hi';
     return 'hello';
   }
