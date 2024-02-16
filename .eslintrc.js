@@ -18,6 +18,6 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'no-var': 'error',
-    // 'no-var': 'warn',
+    'no-unused-var': 'off',
   },
 };
