@@ -9,7 +9,7 @@ export class UsersController {
       from: '활빈당',
     };
     const hi = 'test';
-    var test = 'hi';
+    const test = 'hi';
     return 'hello';
   }
 }
