@@ -9,6 +9,15 @@ export class UsersRepository {
   constructor(private readonly dataSource: DataSource) {
     this.usersRepository = this.dataSource.getRepository(Users);
   }
+  async existCheckUser(userEmail: string): Promise<Users> {
+    const checkUser: Users = await this.usersRepository.findOne({
+      where: {
+        userEmail
+      }
+    });
+
+    return checkUser;
+  }
 
   async joinUser(joinUserDto: JoinUserDto): Promise<void> {
     try {
