@@ -6,7 +6,7 @@ import { DatabaseConfigService } from '@/config/database.config.service';
 const modules = [
   ConfigModule.forRoot({
     isGlobal: true,
-    envFilePath: '.env'
+    envFilePath: 'env/.env.dev'
   }),
   TypeOrmModule.forRootAsync({
     useClass: DatabaseConfigService
