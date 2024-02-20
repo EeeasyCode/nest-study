@@ -1,8 +1,8 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from '../../src/modules/users/services/users.service';
 import { JoinUserDto } from '../../src/modules/users/dtos/join-user.dto';
-import { UsersRepository } from '@/modules/users/repositories/users.repository';
-import { Users } from '@/modules/users/entities/users.entity';
+import { UsersRepository } from '../../src/modules/users/repositories/users.repository';
+import { Users } from '../../src/modules/users/entities/users.entity';
 
 describe('UsersService', () => {
   let service: UsersService;
