@@ -9,8 +9,14 @@ import { UsersRepository } from '../repositories/users.repository';
 export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  async joinUser(joinUserDto: JoinUserDto) {
-    const joinUser = await this.usersRepository.joinUser(joinUserDto);
-    console.log(joinUser);
+  async joinUser(joinUserDto: JoinUserDto): Promise<string> {
+    const existUser = await this.usersRepository.existCheckUser(joinUserDto.userEmail);
+
+    if (!existUser) {
+      await this.usersRepository.joinUser(joinUserDto);
+      return 'success';
+    }
+
+    return 'fail';
   }
 }

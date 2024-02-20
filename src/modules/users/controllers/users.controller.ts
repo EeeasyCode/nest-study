@@ -12,10 +12,12 @@ export class UsersController {
 
   @Post('/join')
   async joinUser(@Body() joinUserDto: JoinUserDto) {
-    const { userEmail, password } = joinUserDto;
+    const joinUserState = await this.usersService.joinUser(joinUserDto);
 
-    await this.usersService.joinUser(joinUserDto);
+    if (joinUserState === 'success') {
+      return 'success join user';
+    }
 
-    return userEmail;
+    return 'already exist user';
   }
 }
