@@ -10,6 +10,7 @@ export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
   async joinUser(joinUserDto: JoinUserDto) {
-    const test = await this.usersRepository.joinUser(joinUserDto);
+    const joinUser = await this.usersRepository.joinUser(joinUserDto);
+    console.log(joinUser);
   }
 }
