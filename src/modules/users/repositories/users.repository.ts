@@ -15,7 +15,7 @@ export class UsersRepository {
         userEmail
       }
     });
-
+    console.log(checkUser);
     return checkUser;
   }
 
