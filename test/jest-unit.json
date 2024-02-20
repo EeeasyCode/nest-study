@@ -16,6 +16,7 @@
         "lcov"
     ],
     "collectCoverageFrom": [
-        "src/**"
+        "src/modules/**/services",
+        "src/modules/**/controllers"
     ]
 }
