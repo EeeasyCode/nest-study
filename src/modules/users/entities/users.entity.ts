@@ -23,7 +23,7 @@ export class Users {
   deleted_at: Date;
 
   @BeforeInsert()
-  private beforeInsert() {
-    this.password = bcrypt.hashSync(this.password, 10);
+  async hashPassword(): Promise<void> {
+    this.password = await bcrypt.hash(this.password, 10);
   }
 }
