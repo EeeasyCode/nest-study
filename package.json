@@ -23,7 +23,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --config ./test/jest-unit.json --collect-coverage",
-    "test:badge": "yarn run test:cov && jest-badges-readme --coverageDir='./coverage'",
+    "test:badge": "yarn run test:cov && jest-badges-readme",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
