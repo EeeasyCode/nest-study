@@ -2,7 +2,6 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UsersController } from '../../src/modules/users/controllers/users.controller';
 import { UsersService } from '../../src/modules/users/services/users.service';
 import { JoinUserDto } from '../../src/modules/users/dtos/join-user.dto';
-import { createResponse } from 'node-mocks-http';
 
 const mockUserService = {
   joinUser: jest.fn()
