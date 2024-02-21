@@ -6,7 +6,10 @@ on:
 jobs:
   TEST:
     runs-on: ubuntu-latest
-
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -25,9 +28,9 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: '[TEST] update test coverage'
-          commit_user_name: EasyCode
+          commit_user_name: eeeasycode
           commit_user_email: eeeasycode@gmail.com
-           
+
           branch: main
           commit_options: '--no-verify --signoff'
           file_pattern: README.md
