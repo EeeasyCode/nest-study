@@ -11,7 +11,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.token }}    
 
       - name: Setup Node
         uses: actions/setup-node@v1
@@ -22,14 +24,11 @@ jobs:
         run: |
           yarn run ci
           yarn run test:badge
-
+      
       - name: Update README.md test coverage section
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: '[TEST] update test coverage'
-          commit_user_name: eeeasycode
-          commit_user_email: eeeasycode@gmail.com
-          push_options: --force
           branch: main
           commit_options: '--no-verify --signoff'
           file_pattern: README.md
