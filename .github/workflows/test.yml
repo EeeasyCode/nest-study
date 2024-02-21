@@ -22,9 +22,12 @@ jobs:
           yarn run test:badge
 
       - name: Update README.md test coverage section
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: '[TEST] update test coverage'
+          commit_user_name: EasyCode
+          commit_user_email: eeeasycode@gmail.com
+           
           branch: main
           commit_options: '--no-verify --signoff'
           file_pattern: README.md
