@@ -16,4 +16,8 @@ export class UsersService {
 
     return 'fail';
   }
+
+  async test() {
+    return 'test';
+  }
 }
