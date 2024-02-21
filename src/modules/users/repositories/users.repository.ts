@@ -2,15 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { DataSource, Repository } from 'typeorm';
 import { Users } from '../entities/users.entity';
 import { JoinUserDto } from '../dtos/join-user.dto';
+import { CustomRepository } from '@/core/decorators/custom.repository.decorator';
 
-@Injectable()
-export class UsersRepository {
-  private usersRepository: Repository<Users>;
-  constructor(private readonly dataSource: DataSource) {
-    this.usersRepository = this.dataSource.getRepository(Users);
-  }
+@CustomRepository(Users)
+export class UsersRepository extends Repository<Users> {
   async existCheckUser(userEmail: string): Promise<Users> {
-    const checkUser: Users = await this.usersRepository.findOne({
+    const checkUser: Users = await this.findOne({
       where: {
         userEmail
       }
@@ -21,8 +18,8 @@ export class UsersRepository {
 
   async joinUser(joinUserDto: JoinUserDto): Promise<void> {
     try {
-      const joinUser: Users = this.usersRepository.create(joinUserDto);
-      await this.usersRepository.save(joinUser);
+      const joinUser: Users = this.create(joinUserDto);
+      await this.save(joinUser);
     } catch (err) {
       console.log(err);
     }
