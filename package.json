@@ -9,7 +9,6 @@
     "jest-badges-readme": "lib/index.js"
   },
   "scripts": {
-    "postinstall": "husky install",
     "prepare": "husky install",
     "prebuild": "rimraf dist",
     "build": "nest build",
