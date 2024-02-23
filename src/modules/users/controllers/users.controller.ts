@@ -9,7 +9,7 @@ export class UsersController {
   @Post('/join')
   async joinUser(@Body() joinUserDto: JoinUserDto) {
     const joinUserState = await this.usersService.joinUser(joinUserDto);
-
+    console.log('test');
     if (joinUserState === 'success') {
       return 'success join user';
     }
