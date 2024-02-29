@@ -2,7 +2,7 @@ import { BeforeInsert, Column, CreateDateColumn, DeleteDateColumn, Entity, Prima
 
 import * as bcrypt from 'bcrypt';
 
-@Entity({ name: 'users' })
+@Entity({ name: 'users_inventory' })
 export class Users {
   @PrimaryGeneratedColumn()
   id: number;
