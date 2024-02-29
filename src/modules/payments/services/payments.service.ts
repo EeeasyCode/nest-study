@@ -19,12 +19,12 @@ export class PaymentsService {
     await queryRunner.startTransaction();
 
     try {
-      const a = await this.paymentsRepository.paymentProcessing(orderProductDto);
-      const b = await this.usersInventoryRepository.updateInventory(user_id, passTicket, matchTicket, point);
-      console.log(a);
-      console.log(b);
+      await this.paymentsRepository.paymentProcessing(orderProductDto);
+      throw Error();
+      await this.usersInventoryRepository.updateInventory(user_id, passTicket, matchTicket, point);
     } catch (e) {
       await queryRunner.rollbackTransaction();
+      console.log(e);
     } finally {
       await queryRunner.release();
     }

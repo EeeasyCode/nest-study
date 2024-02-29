@@ -7,12 +7,12 @@ import { UsersInventory } from '../entities/users-inventory.entity';
 
 @CustomRepository(UsersInventory)
 export class UsersInventoryRepository extends Repository<UsersInventory> {
-  async updateInventory(userId: number, passTicket?: number, matchTicket?: number, point?: number) {
+  async updateInventory(user_id: number, passTicket?: number, matchTicket?: number, point?: number) {
     const a = await this.save({
-      user_id: userId,
-      passTicket: passTicket,
-      matchTicket: matchTicket,
-      point: point
+      user: user_id,
+      pass_ticket_amount: passTicket,
+      match_ticket_amount: matchTicket,
+      point_amount: point
     });
     console.log(a);
   }

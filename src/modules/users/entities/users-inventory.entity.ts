@@ -24,9 +24,6 @@ export class UsersInventory {
   @Column()
   point_amount: number;
 
-  @ManyToOne(() => Users, (user) => user.id)
-  user: Users;
-
-  @Column()
-  user_id: number;
+  @ManyToOne(() => Users, (user) => user)
+  user: number;
 }
