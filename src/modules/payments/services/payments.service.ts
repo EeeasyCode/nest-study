@@ -19,8 +19,8 @@ export class PaymentsService {
     await queryRunner.startTransaction();
 
     try {
-      await this.paymentsRepository.paymentProcessing(orderProductDto);
-      throw Error();
+      const transaction1 = await queryRunner.manager.withRepository(this.paymentsRepository).paymentProcessing(orderProductDto);
+      // throw Error();
       await this.usersInventoryRepository.updateInventory(user_id, passTicket, matchTicket, point);
     } catch (e) {
       console.log('롤백');
