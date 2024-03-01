@@ -23,8 +23,8 @@ export class PaymentsService {
       throw Error();
       await this.usersInventoryRepository.updateInventory(user_id, passTicket, matchTicket, point);
     } catch (e) {
+      console.log('롤백');
       await queryRunner.rollbackTransaction();
-      console.log(e);
     } finally {
       await queryRunner.release();
     }

@@ -35,4 +35,5 @@ lerna-debug.log*
 
 # add config
 env
+.env
 mysql

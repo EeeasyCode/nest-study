@@ -33,9 +33,9 @@ export class Payments {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @ManyToOne(() => Users, (user) => user.id)
-  user: Users;
+  // @ManyToOne(() => Users, (user) => user.id)
+  // user: Users;
 
-  @Column()
-  user_id: number;
+  // @Column()
+  // user_id: number;
 }
