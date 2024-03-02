@@ -20,7 +20,7 @@ export class PaymentsService {
 
     try {
       await queryRunner.manager.withRepository(this.paymentsRepository).paymentProcessing(orderProductDto);
-      await this.usersInventoryRepository.updateInventory(user_id, passTicket, matchTicket, point);
+      await queryRunner.manager.withRepository(this.usersInventoryRepository).updateInventory(user_id, passTicket, matchTicket, point);
     } catch (e) {
       await queryRunner.rollbackTransaction();
     } finally {
