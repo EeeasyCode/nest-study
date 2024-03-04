@@ -1,16 +1,4 @@
-import {
-  BeforeInsert,
-  Column,
-  CreateDateColumn,
-  DeleteDateColumn,
-  Entity,
-  JoinColumn,
-  ManyToOne,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn
-} from 'typeorm';
-
-import * as bcrypt from 'bcrypt';
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { Users } from '@/modules/users/entities/users.entity';
 
 @Entity({ name: 'payments' })
@@ -33,6 +21,8 @@ export class Payments {
   @UpdateDateColumn()
   updated_at: Date;
 
+  @ManyToOne(() => Users, (user) => user)
+  user: number;
   // @ManyToOne(() => Users, (user) => user.id)
   // user: Users;
 

@@ -13,13 +13,15 @@ export class PaymentsService {
   ) {}
 
   async paymentTransaction(orderProductDto: OrderProductDto) {
-    const { user_id, passTicket, matchTicket, point } = orderProductDto;
+    const { paymentType, paymentProduct, paymentAmount, user_id, passTicket, matchTicket, point } = orderProductDto;
     const queryRunner = this.dataSource.createQueryRunner();
     await queryRunner.connect();
     await queryRunner.startTransaction();
 
     try {
-      await queryRunner.manager.withRepository(this.paymentsRepository).paymentProcessing(orderProductDto);
+      await queryRunner.manager
+        .withRepository(this.paymentsRepository)
+        .paymentProcessing(user_id, paymentType, paymentProduct, paymentAmount);
       await queryRunner.manager.withRepository(this.usersInventoryRepository).updateInventory(user_id, passTicket, matchTicket, point);
     } catch (e) {
       await queryRunner.rollbackTransaction();

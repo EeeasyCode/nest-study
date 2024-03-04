@@ -8,7 +8,6 @@ export class PaymentsController {
 
   @Post('orders')
   async ordersProduct(@Body() orderProductDto: OrderProductDto) {
-    const orders = await this.paymentsService.paymentTransaction(orderProductDto);
-    console.log(orders);
+    await this.paymentsService.paymentTransaction(orderProductDto);
   }
 }
