@@ -17,7 +17,6 @@ export class PaymentsService {
     const queryRunner = this.dataSource.createQueryRunner();
     await queryRunner.connect();
     await queryRunner.startTransaction();
-
     try {
       await queryRunner.manager
         .withRepository(this.paymentsRepository)
