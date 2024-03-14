@@ -3,6 +3,7 @@ import { OrderProductDto } from '../dtos/orders-product.dto';
 import { PaymentsRepository } from '../repositories/payments.repository';
 import { DataSource } from 'typeorm';
 import { UsersInventoryRepository } from '@/modules/users/repositories/users-inventory.repository';
+import { Transactional } from 'typeorm-transactional';
 
 @Injectable()
 export class PaymentsService {
@@ -30,5 +31,15 @@ export class PaymentsService {
     } finally {
       await queryRunner.release();
     }
+  }
+
+  @Transactional()
+  async paymentTransaction2(orderProductDto: OrderProductDto) {
+    const { paymentType, paymentProduct, paymentAmount, user_id, passTicket, matchTicket, point } = orderProductDto;
+    console.log('test');
+    await this.paymentsRepository.paymentProcessing(user_id, paymentType, paymentProduct, paymentAmount);
+    //
+    await this.usersInventoryRepository.updateInventory(user_id);
+    throw Error();
   }
 }

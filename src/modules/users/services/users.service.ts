@@ -8,7 +8,7 @@ import { DataSource } from 'typeorm';
 export class UsersService {
   constructor(
     private readonly usersRepository: UsersRepository,
-    @InjectDataSource('default') private readonly dataSource: DataSource
+    private readonly dataSource: DataSource
   ) {}
 
   async joinUser(joinUserDto: JoinUserDto): Promise<string> {

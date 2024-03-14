@@ -10,4 +10,9 @@ export class PaymentsController {
   async ordersProduct(@Body() orderProductDto: OrderProductDto) {
     await this.paymentsService.paymentTransaction(orderProductDto);
   }
+
+  @Post('orders1')
+  async orders1Product(@Body() orderProductDto: OrderProductDto) {
+    await this.paymentsService.paymentTransaction2(orderProductDto);
+  }
 }

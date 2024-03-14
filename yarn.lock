@@ -1008,7 +1008,7 @@
     "@types/connect" "*"
     "@types/node" "*"
 
-"@types/cls-hooked@^4.2.1":
+"@types/cls-hooked@^4.2.1", "@types/cls-hooked@^4.3.3":
   version "4.3.8"
   resolved "https://registry.yarnpkg.com/@types/cls-hooked/-/cls-hooked-4.3.8.tgz#ece275711b34eca51b3bc3899b13add7d8aff250"
   integrity sha512-tf/7H883gFA6MPlWI15EQtfNZ+oPL0gLKkOlx9UHFrun1fC/FkuyNBpTKq1B5E3T4fbvjId6WifHUdSGsMMuPg==
@@ -5272,11 +5272,6 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
-reflect-metadata@^0.1.13:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.14.tgz#24cf721fe60677146bb77eeb0e1f9dece3d65859"
-  integrity sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==
-
 reflect-metadata@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.1.tgz#8d5513c0f5ef2b4b9c3865287f3c0940c1f67f74"
@@ -5448,7 +5443,7 @@ semver@^7.3.4, semver@^7.3.5, semver@^7.3.8, semver@^7.5.3:
   dependencies:
     lru-cache "^6.0.0"
 
-semver@^7.5.4:
+semver@^7.5.1, semver@^7.5.4:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-7.6.0.tgz#1a46a4db4bffcccd97b743b5005c8325f23d4e2d"
   integrity sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==
@@ -6081,6 +6076,15 @@ typeorm-transactional-cls-hooked@^0.1.21:
     "@types/cls-hooked" "^4.2.1"
     cls-hooked "^4.2.2"
 
+typeorm-transactional@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/typeorm-transactional/-/typeorm-transactional-0.5.0.tgz#e59f0b0a552eee92e71d4727b234b7b113b6d87b"
+  integrity sha512-53/CwnXpOIJnWU3oVCNbhHB95FwciKSGbY+m/Hw4e2dBM2c4toiOHwf4pmk83Ne7guznmDgVr/5IUfbp+JTPCg==
+  dependencies:
+    "@types/cls-hooked" "^4.3.3"
+    cls-hooked "^4.2.2"
+    semver "^7.5.1"
+
 typeorm@^0.3.20:
   version "0.3.20"
   resolved "https://registry.yarnpkg.com/typeorm/-/typeorm-0.3.20.tgz#4b61d737c6fed4e9f63006f88d58a5e54816b7ab"
@@ -6321,6 +6325,7 @@ wide-align@^1.1.2:
     string-width "^1.0.2 || 2 || 3 || 4"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
+  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
