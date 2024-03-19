@@ -1,10 +1,12 @@
 import { BeforeInsert, Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 import * as bcrypt from 'bcrypt';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({ name: 'users' })
 export class Users {
   @PrimaryGeneratedColumn()
+  @ApiProperty({ description: '아이디' })
   id: number;
 
   @Column()

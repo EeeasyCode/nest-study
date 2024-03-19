@@ -37,8 +37,8 @@ export class PaymentsService {
   async paymentTransaction2(orderProductDto: OrderProductDto) {
     const { paymentType, paymentProduct, paymentAmount, user_id, passTicket, matchTicket, point } = orderProductDto;
     console.log('test');
+
     await this.paymentsRepository.paymentProcessing(user_id, paymentType, paymentProduct, paymentAmount);
-    //
     await this.usersInventoryRepository.updateInventory(user_id);
     throw Error();
   }
