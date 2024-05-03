@@ -16,4 +16,9 @@ export class UsersController {
 
     return 'already exist user';
   }
+
+  @Post('/test')
+  async test() {
+    await this.usersService.findDetail();
+  }
 }

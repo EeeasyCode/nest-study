@@ -1,19 +1,29 @@
 import { Injectable } from '@nestjs/common';
 import { JoinUserDto } from '../dtos/join-user.dto';
-import { UsersRepository } from '../repositories/users.repository';
+
+import { UserDetailRepository } from '../repositories/users.detail.repository';
+import { UserRepository } from '../repositories/users.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly usersRepository: UsersRepository) {}
+  constructor(
+    private readonly userRepository: UserRepository,
+    private readonly userDetailRepository: UserDetailRepository
+  ) {}
 
   async joinUser(joinUserDto: JoinUserDto): Promise<string> {
-    const existUser = await this.usersRepository.existCheckUser(joinUserDto.userEmail);
+    const existUser = await this.userRepository.existCheckUser(joinUserDto.userEmail);
 
     if (!existUser) {
-      await this.usersRepository.joinUser(joinUserDto);
+      await this.userRepository.joinUser(joinUserDto);
       return 'success';
     }
 
     return 'fail';
+  }
+
+  async findDetail() {
+    const userList = await this.userRepository.testFind();
+    console.log(userList);
   }
 }

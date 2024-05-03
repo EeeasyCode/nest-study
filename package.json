@@ -50,6 +50,7 @@
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "mongodb": "^6.3.0",
+    "mybatis-mapper": "^0.8.0",
     "mysql2": "^3.9.1",
     "passport": "^0.7.0",
     "passport-strategy": "^1.0.0",
