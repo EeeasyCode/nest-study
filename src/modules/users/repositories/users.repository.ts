@@ -24,4 +24,8 @@ export class UsersRepository extends Repository<Users> {
       console.log(err);
     }
   }
+
+  async findAllUser() {
+    return await this.find();
+  }
 }
