@@ -16,4 +16,9 @@ export class UsersController {
 
     return 'already exist user';
   }
+
+  @Get('/eager')
+  async eagerLoading() {
+    return this.usersService.eagerLoading();
+  }
 }

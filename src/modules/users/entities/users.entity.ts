@@ -1,6 +1,16 @@
-import { BeforeInsert, Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from 'typeorm';
 
 import * as bcrypt from 'bcrypt';
+import { Posts } from '@/modules/posts/posts.entity';
 
 @Entity({ name: 'users' })
 export class Users {
@@ -12,6 +22,11 @@ export class Users {
 
   @Column()
   password: string;
+
+  @OneToMany((type) => Posts, (post) => post.user, {
+    eager: true
+  })
+  posts: Promise<Posts[]>;
 
   @CreateDateColumn()
   created_at: Date;

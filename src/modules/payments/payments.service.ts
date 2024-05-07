@@ -3,7 +3,6 @@ import { Repository } from 'typeorm';
 import { Payments } from './payments.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UsersService } from '../users/services/users.service';
-import { Users } from '../users/entities/users.entity';
 
 @Injectable()
 export class PaymentsService {
@@ -30,8 +29,6 @@ export class PaymentsService {
     //   .createQueryBuilder('payments')
     //   .where('payments.userId IN (:...userIds)', { userIds })
     //   .getMany();
-    const leftJoinData = await this.userService.leftJoin();
-    console.log('leftJoin:::', leftJoinData);
-    return leftJoinData;
+    return await this.userService.leftJoin();
   }
 }

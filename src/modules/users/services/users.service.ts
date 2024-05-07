@@ -44,4 +44,9 @@ export class UsersService {
     // .addSelect(['payment.id', 'payment.userId'])
     // .getMany();
   }
+
+  async eagerLoading() {
+    const users = await this.usersRepository.findOne({ where: { id: 1 } });
+    return users;
+  }
 }
