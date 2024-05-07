@@ -21,4 +21,9 @@ export class UsersController {
   async eagerLoading() {
     return this.usersService.eagerLoading();
   }
+
+  @Get('/lazy')
+  async lazyLoading() {
+    return this.usersService.lazyLoading();
+  }
 }

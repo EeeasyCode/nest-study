@@ -24,7 +24,8 @@ export class Users {
   password: string;
 
   @OneToMany((type) => Posts, (post) => post.user, {
-    eager: true
+    // eager: true
+    lazy: true
   })
   posts: Promise<Posts[]>;
 

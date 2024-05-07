@@ -49,4 +49,10 @@ export class UsersService {
     const users = await this.usersRepository.findOne({ where: { id: 1 } });
     return users;
   }
+
+  async lazyLoading() {
+    const users = await this.usersRepository.findOne({ where: { id: 1 } });
+    const posts = await users.posts;
+    return posts;
+  }
 }
