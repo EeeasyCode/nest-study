@@ -24,12 +24,14 @@ export class PaymentsService {
   }
 
   async test2() {
-    const userData = await this.userService.findAllUser();
-    const userIds = userData.map((user) => user.id);
-    const paymentData = await this.paymentsRepository
-      .createQueryBuilder('payments')
-      .where('payments.userId IN (:...userIds)', { userIds })
-      .getMany();
-    return paymentData;
+    // const userData = await this.userService.findAllUser();
+    // const userIds = userData.map((user) => user.id);
+    // const paymentData = await this.paymentsRepository
+    //   .createQueryBuilder('payments')
+    //   .where('payments.userId IN (:...userIds)', { userIds })
+    //   .getMany();
+    const leftJoinData = await this.userService.leftJoin();
+    console.log('leftJoin:::', leftJoinData);
+    return leftJoinData;
   }
 }

@@ -5,7 +5,7 @@ services:
     container_name: mysql
     restart: always
     ports:
-      - 3306:3306 # HOST:CONTAINER
+      - 33061:3306 # HOST:CONTAINER
     environment:
       MYSQL_ROOT_PASSWORD: qwer1234
       MYSQL_DATABASE: nest_prac
