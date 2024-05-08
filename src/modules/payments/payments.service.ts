@@ -31,4 +31,18 @@ export class PaymentsService {
     //   .getMany();
     return await this.userService.leftJoin();
   }
+
+  async test3() {
+    const entity = this.paymentsRepository.create({
+      id: 1,
+      userId: 1,
+      updated_at: Date()
+    });
+    // duplicate error 발생
+    // await this.paymentsRepository.insert(entity);
+
+    // 이미 존재하기 때문에, select 후 update query
+    await this.paymentsRepository.save(entity);
+    console.log(entity);
+  }
 }

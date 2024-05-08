@@ -14,4 +14,9 @@ export class PaymentsController {
   async test2() {
     return await this.paymentService.test2();
   }
+
+  @Get('test3')
+  async test3() {
+    return await this.paymentService.test3();
+  }
 }
