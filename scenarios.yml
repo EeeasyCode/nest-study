@@ -1,0 +1,23 @@
+config:
+  target: 'http://localhost:3002/v1'
+  phases:
+    - duration: 30
+      arrivalRate: 5
+      name: Warm up
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 15
+      name: Rame up load
+
+scenarios:
+  - post:
+      url: '/upload'
+      headers:
+        Authorization: 'Bearer {{ authToken }}'
+      formData:
+        file: '{{ imagePath }}'
+      expect:
+        - statusCode: 200
+        - contentType: json
+        - json: '$.success'
+          value: true
