@@ -1,5 +1,5 @@
 config:
-  target: ''
+  target: 'http://localhost:3002/v1'
   phases:
     - duration: 10
       arrivalRate: 5
@@ -8,21 +8,13 @@ config:
       arrivalRate: 5
       rampTo: 10
       name: Rame up load
-
+  processor: './index.js'
 scenarios:
   - name: 'Upload image'
     flow:
       - post:
           url: '/resources/upload/image'
+          beforeRequest: 'addMultipartFormData'
+          afterResponse: 'logResponse'
           headers:
             Authorization: ''
-          formData:
-          fields:
-            - name: 'tag'
-              value: 'test'
-            - name: 'image'
-              value: './test_image.jpeg'
-              type: 'file'
-              options:
-                filename: 'test'
-                contentType: 'image/jpeg'
