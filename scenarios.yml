@@ -1,5 +1,5 @@
 config:
-  target: 'http://localhost:3002/v1'
+  # target: 'http://localhost:3002/v1'
   phases:
     - duration: 10
       arrivalRate: 5
@@ -17,4 +17,4 @@ scenarios:
           beforeRequest: 'addMultipartFormData'
           afterResponse: 'logResponse'
           headers:
-            Authorization: ''
+            Authorization: 'Bearer '
